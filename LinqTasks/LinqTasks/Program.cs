@@ -58,6 +58,10 @@
 
             PrintNotRedHairedPeopleTotalHeight();
 
+            PrintPeopleOrderedByHeightDesc();
+
+            PrintTwoMostHighPersons();
+
             Console.ReadLine();
         }
 
@@ -109,6 +113,31 @@
                 .Sum(p => p.Height);
 
             Console.WriteLine(totalHeight);
+        }
+
+        private static void PrintPeopleOrderedByHeightDesc()
+        {
+            Console.WriteLine("-----------------------------------------------------------------------------------------------");
+            Console.WriteLine("Люди, отсортированные по росту (по убыванию):");
+
+            var orderedPeople = _persons
+                .OrderByDescending(p => p.Height)
+                .ToList();
+
+            PrintPersons(orderedPeople);
+        }
+
+        private static void PrintTwoMostHighPersons()
+        {
+            Console.WriteLine("-----------------------------------------------------------------------------------------------");
+            Console.WriteLine("Два самых высоких человека:");
+
+            var twoHighestPersons = _persons
+                .OrderByDescending(p => p.Height)
+                .Take(2)
+                .ToList();
+
+            PrintPersons(twoHighestPersons);
         }
 
         private static void PrintPersons(IReadOnlyCollection<Person> persons)

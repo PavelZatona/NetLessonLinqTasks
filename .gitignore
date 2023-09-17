@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/LinqTasks/.vs/LinqTasks
+/LinqTasks/LinqTasks/bin/Debug/net7.0
+/LinqTasks/LinqTasks/obj
